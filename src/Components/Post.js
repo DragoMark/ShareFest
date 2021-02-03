@@ -50,9 +50,9 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
                     )
             } */}
 
-            <div className="post__image">
+            {/* <div className="post__image">
                 <img src={image} />
-            </div>
+            </div> */}
 
             <div className="post__options">
                 <button onClick = {handleClick} type="button" className="btn btn-light">

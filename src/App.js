@@ -6,6 +6,7 @@ import Footer from './Components/Footer';
 import Sidebar from './Components/Sidebar';
 import Learn from './Components/Learn';
 import Daily from './Components/Daily';
+import Modules from './Components/Modules'
 // import Feed3 from './Components/Feed3';
 import Users from './Components/Users';
 import NewPost from './Components/NewPost';
@@ -36,7 +37,6 @@ function App() {
               <Route path="/learn" exact component={Learn} />
               <Route path="/daily" component={Daily} />
               <Route path="/learn/:id" component={Modules} />
-              {/* <Route path="/career" component={Feed3} /> */}
             </div>
           </Router> 
 
