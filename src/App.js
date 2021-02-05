@@ -36,7 +36,7 @@ function App() {
               <Route path="/new-post" component={NewPost} />
               <Route path="/learn" exact component={Learn} />
               <Route path="/daily" component={Daily} />
-              <Route path="/learn/:id" component={Modules} />
+              {/* <Route path="/learn/:id" component={Modules} /> */}
             </div>
           </Router> 
 

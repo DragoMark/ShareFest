@@ -10,6 +10,7 @@ import addNotification from 'react-push-notification';
 
 const NewPost = () => {
     const [title, setTitle ] = useState('');
+    const [file, setFile ] = useState(null);
     const [description, setDescription ] = useState('');
     const [modules, setModules] = useState([]);
     // let preset = ['Modules 10','Modules 9','Modules 8','Modules 7','Modules 6','Modules 5','Modules 4','Modules 3','Modules 2']
@@ -41,6 +42,10 @@ const NewPost = () => {
 
     const handleFile = (e) => {
         const file = e.target.files[0];
+        if(file)
+        {
+            setFile(file);
+        }
         const storage = db.storage().ref();
         const fileRef = storage.child(file.name)
         fileRef.put(file).then(() => {
@@ -111,13 +116,13 @@ const NewPost = () => {
             <div className="messageSender__top">
                     <div className="contact-clean">
                         <form method="post" onSubmit={handleSubmit}>
-                            <h2 className="text-center">modules</h2>
+                            <h2 className="text-center">New Post</h2>
                             <div className="form-group">
                                 <input onChange={handleTitle} value={title} className="form-control" type="text" name="title" placeholder="Title" required/>
                             </div>
                             <div className="form-group">
                                 <select className="form-control" onChange={handleSelection} required>
-                                    <option selected>Please select one</option>
+                                    <option value="" selected>Please select one</option>
                                     <option value="Learn">Learn</option>
                                     <option value="Daily updates">Daily Updates</option>
                                 </select>
