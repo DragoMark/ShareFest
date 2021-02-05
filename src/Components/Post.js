@@ -29,6 +29,9 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
     }
     return (
         <div className='post'>
+            <div className="post__image">
+                <img src={image} />
+            </div>
             <div className="post__top">
                 <div className="post__topInfo">
                     <h2>{username}</h2>
@@ -50,9 +53,7 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
                     )
             } */}
 
-            {/* <div className="post__image">
-                <img src={image} />
-            </div> */}
+
 
             <div className="post__options">
                 <button onClick = {handleClick} type="button" className="btn btn-light">

@@ -36,7 +36,7 @@ function Daily (){
                         // profilePic={post.data.profilePic}
                         message={post.data.description}
                         timestamp={post.data.timestamp}
-                        // image={post.data.image}
+                        image={post.data.url}
                         username={post.data.title}
                     />
                 ))    
