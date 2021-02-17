@@ -30,6 +30,14 @@ const Sidebar = () => {
                 <SidebarRow Icon={PeopleIcon} title='Post' />
             </Link>
 
+            <Link to='/add-about-us'>
+                <SidebarRow Icon={PeopleIcon} title='AddAboutUs' />
+            </Link>
+
+            <Link to='/add-TnC'>
+                <SidebarRow Icon={PeopleIcon} title='AddTnC' />
+            </Link>
+
             <Dropdown>
                 <Dropdown.Toggle>
                     <SidebarRow Icon={VideoLibraryIcon} title='Content' />

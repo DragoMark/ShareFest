@@ -38,6 +38,14 @@
     font-weight: bold;
 }
 
+.post__topInfo > h1{
+    /* font-size: medium; */
+    display:flex;
+    align-items:center;
+    color: black;
+    font-weight: bold;
+}
+
 .post__topInfo > p{
     font-size: small;
     color: gray;

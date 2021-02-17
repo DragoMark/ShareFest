@@ -1,5 +1,7 @@
 import React from "react";
-import './Footer.css'
+import './Footer.css';
+import { Link } from 'react-router-dom';
+// import SidebarRow from './SidebarRow'
 
 const Footer = () => {
   return (
@@ -16,7 +18,9 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="col-sm-6 col-md-3 item">
-                            <h3>About</h3>
+                        <Link to='/about-us'>
+                            <h3>About Us</h3>
+                        </Link>
                             <ul>
                                 <li><a href="#">Company</a></li>
                                 <li><a href="#">Team</a></li>
@@ -25,6 +29,9 @@ const Footer = () => {
                         </div>
                         <div className="col-md-6 item text">
                             <h3>Company Name</h3>
+                            <Link to='/TnC'>
+                                <h3>Terms & Conditions</h3>
+                            </Link>
                             <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
                         </div>
                         <div className="col item social"><a href="#"><i className="icon ion-social-facebook"></i></a><a href="#"><i className="icon ion-social-twitter"></i></a><a href="#"><i className="icon ion-social-snapchat"></i></a><a href="#"><i className="icon ion-social-instagram"></i></a></div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Post.css'
 import firebase from 'firebase';
 import db from '../firebase'
@@ -12,24 +12,35 @@ import addNotification from 'react-push-notification';
 
 // import React, { useState } from 'react'
 
-const Post = ({ key, id, image, collection, username, timestamp, message }) => {
-    const handleClick = () => {
-        let tempRef = db.database().ref(collection+'/'+id);
-        tempRef.remove();
+const AboutUs = () => {
+    const [description, setDescription ] = useState('');
+    // const handleClick = () => {
+    //     let tempRef = db.database().ref(collection+'/'+id);
+    //     tempRef.remove();
 
-        addNotification({
-            title: 'Warning',
-            subtitle: 'You have deleted a post',
-            // message: 'This is a very long message',
-            theme: 'red',
+    //     addNotification({
+    //         title: 'Warning',
+    //         subtitle: 'You have deleted a post',
+    //         // message: 'This is a very long message',
+    //         theme: 'red',
 
-            // native: true  when using native, your OS will handle theming.
-        });
-    }
+    //         // native: true  when using native, your OS will handle theming.
+    //     });
+    // }
+    useEffect(()=>{
+        const getAboutUs = db.database().ref('AboutUs');
+        getAboutUs.on('value',(snapshot) => {
+            const data = snapshot.val();
+            // console.log(snapshot.val().description)
+            setDescription(data.description);
+        })
+        // setDescription()
+    },[]);
 
     return (
         <div className='post'>
             <div className="post__image">
+                
                 {/* { */}
                     {/* type=="video/mp4" ? ( */}
                     {/* <video width="800" height="400">
@@ -37,20 +48,20 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
                         Your browser does not support the video tag.
                     </video> */}
                     {/* ):( */}
-                        <img src={image}/>
+                        {/* <img src={image}/> */}
                     {/* )
                 } */}
             </div>
             <div className="post__top">
                 <div className="post__topInfo">
-                    <h2>{username}</h2>
-                   {/* <p>{`${new Date(timestamp).getHours()}:${new Date(timestamp).getMinutes()}:${new Date(timestamp).getSeconds()} ${new Date(timestamp).getDate()}/${new Date(timestamp).getMonth()+1}/${new Date(timestamp).getFullYear()}`}</p> */}
-                   <p>{timestamp}</p>
+                    <h1>About Us</h1>
+                   {/* <p>{`${new Date(timestamp).getHours()}:${new Date(timestamp).getMinutes()}:${new Date(timestamp).getSeconds()} ${new Date(timestamp).getDate()}/${new Date(timestamp).getMonth()+1}/${new Date(timestamp).getFullYear()}`}</p>
+                   <p>{timestamp}</p> */}
                 </div>
             </div>
 
             <div className="post__bottom">
-                <p>{ message }</p>
+                <p>{ description }</p>
             </div>
 
             {/* {
@@ -65,14 +76,14 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
 
 
 
-            <div className="post__options">
+            {/* <div className="post__options">
                 <button onClick = {handleClick} type="button" className="btn btn-light">
                     <div className="post__option">
                         <ThumbUpIcon/>
                         <p>Delete</p>
                     </div>
                 </button>
-                {/* <div className="post__option">
+                <div className="post__option">
                     <ChatBubbleOutlineIcon />
                     <p>Answer</p>
                 </div>
@@ -83,12 +94,12 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
                 <div className="post__option">
                     <AccountCirleIcon />
                     <ExpandMoreOutlined />
-                </div> */}
-            </div>
+                </div>
+            </div> */}
         </div>
             
         
     )
 }
 
-export default Post
+export default AboutUs

@@ -17,6 +17,9 @@ const NewPost = () => {
     const [error, setError ] = useState(null);
     const [description, setDescription ] = useState('');
     const [modules, setModules] = useState([]);
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+        ];
     // let preset = ['Modules 10','Modules 9','Modules 8','Modules 7','Modules 6','Modules 5','Modules 4','Modules 3','Modules 2']
     // const [module, setModule] = useState('');
     // const [imageUrl, setImageUrl ] = useState('');
@@ -61,18 +64,22 @@ const NewPost = () => {
 
         const postList = db.database().ref(e.target[1].value);
         const newPost = postList.push();
+        const date = `${monthNames[new Date().getMonth()]} ${new Date().getDate()}, ${new Date().getFullYear()}`;
+        // console.log(date);
+        // console.log(typeof(date));
         newPost.set({
             description: e.target[2].value,
-            timestamp: firebase.database.ServerValue.TIMESTAMP,
+            timestamp:date,
             title: e.target[0].value,
-            url: url
+            media: url
             // image:imageUrl
         }) 
 
 
-        console.log(url)
+        // console.log(url)
         setTitle('');
         setDescription('');
+        setFile('');
 
         addNotification({
             title: 'Success',
@@ -83,6 +90,7 @@ const NewPost = () => {
     }
 
     return (
+        // <div className="testing">
         <div className='messageSender'>
             <div className="messageSender__top">
                     <div className="contact-clean">
@@ -107,8 +115,8 @@ const NewPost = () => {
                             </div>
                             <div className="output">
                                 { error && <div className="error">{ error }</div>}
-                                { file && <div>{ file.name }</div>}
-                                { file && <ProgressBar file = {file} setFile={setFile} setUrl={setUrl}/>}
+                                { file && <div>{ `Loading ${file.name}...` }</div>}
+                                { file && <div>Please Wait<br/><ProgressBar file = {file} setFile={setFile} setUrl={setUrl}/></div>}
                             </div>
                             <div className="form-group">
                                 <button  className="btn btn-primary" type="submit">Post </button>
@@ -117,6 +125,7 @@ const NewPost = () => {
                     </div>
             </div>
         </div>
+        // </div>
     )
 }
 

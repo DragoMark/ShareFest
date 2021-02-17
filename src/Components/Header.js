@@ -1,8 +1,8 @@
 //Header__center change the icons
-
 import React from 'react';
 import './Header.css';
 import logo from '../assets/logo1.png';
+import { Link } from 'react-router-dom';
 // import { useStateValue } from '../StateProvider'
 
 const Header = () => {
@@ -12,7 +12,9 @@ const Header = () => {
     return (
         <div className = 'header'>
             <div className="header__left">
-                <img src={logo} alt="Crack Logo"/>
+                {/* <Link to='/'> */}
+                    <img src={logo} alt="Crack Logo"/>
+                {/* </Link> */}
             </div>
 
             <div className="header__right">

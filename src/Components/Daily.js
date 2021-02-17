@@ -17,10 +17,10 @@ function Daily (){
                 docs.push(child)
             })
             setPosts(docs.map(doc => ({ id:doc.key, data:doc.val() })))
-            console.log(docs);
-            console.log((posts))
-            console.log(snapshot);
-            console.log(snapshot.val())
+            // console.log(docs);
+            // console.log((posts))
+            // console.log(snapshot);
+            // console.log(snapshot.val())
         })
     },[])
 
@@ -36,7 +36,7 @@ function Daily (){
                         // profilePic={post.data.profilePic}
                         message={post.data.description}
                         timestamp={post.data.timestamp}
-                        image={post.data.url}
+                        image={post.data.media}
                         username={post.data.title}
                     />
                 ))    

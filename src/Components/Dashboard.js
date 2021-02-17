@@ -3,7 +3,7 @@ import React from 'react'
 const Dashboard = () => {
     return (
             <div className="container-fluid">
-                <div className="d-sm-flex justify-content-between align-items-center mb-4">
+                <div className="d-sm-flex justify-content-between align-items-center mb-4 mt-4">
                     <h3 className="text-dark mb-0">Dashboard</h3>
                 </div>
                 <div className="row">
