@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import './Post.css'
+import './TnC.css'
 import firebase from 'firebase';
 import db from '../firebase'
-import { Avatar } from '@material-ui/core'
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
-import NearMeIcon from '@material-ui/icons/NearMe';
-import AccountCirleIcon from '@material-ui/icons/AccountCircle';
-import ExpandMoreOutlined from '@material-ui/icons/ExpandMoreOutlined';
-import addNotification from 'react-push-notification';
+// import { Avatar } from '@material-ui/core'
+// import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+// import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+// import NearMeIcon from '@material-ui/icons/NearMe';
+// import AccountCirleIcon from '@material-ui/icons/AccountCircle';
+// import ExpandMoreOutlined from '@material-ui/icons/ExpandMoreOutlined';
+// import addNotification from 'react-push-notification';
 
 // import React, { useState } from 'react'
 
@@ -20,7 +20,7 @@ const TnC = () => {
 
     //     addNotification({
     //         title: 'Warning',
-    //         subtitle: 'You have deleted a post',
+    //         subtitle: 'You have deleted a tnc',
     //         // message: 'This is a very long message',
     //         theme: 'red',
 
@@ -38,8 +38,8 @@ const TnC = () => {
     },[]);
 
     return (
-        <div className='post'>
-            <div className="post__image">
+        <div className='tnc'>
+            <div className="tnc__image">
                 
                 {/* { */}
                     {/* type=="video/mp4" ? ( */}
@@ -52,15 +52,15 @@ const TnC = () => {
                     {/* )
                 } */}
             </div>
-            <div className="post__top">
-                <div className="post__topInfo">
+            <div className="tnc__top">
+                <div className="tnc__topInfo">
                     <h1>Terms & Conditions</h1>
                    {/* <p>{`${new Date(timestamp).getHours()}:${new Date(timestamp).getMinutes()}:${new Date(timestamp).getSeconds()} ${new Date(timestamp).getDate()}/${new Date(timestamp).getMonth()+1}/${new Date(timestamp).getFullYear()}`}</p>
                    <p>{timestamp}</p> */}
                 </div>
             </div>
 
-            <div className="post__bottom">
+            <div className="tnc__bottom">
                 <p>{ description }</p>
             </div>
 

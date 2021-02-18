@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import logo from './assets/logo1.png';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Sidebar from './Components/Sidebar';

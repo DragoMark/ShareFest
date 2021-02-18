@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './NewPost.css'
-// import { useStateValue } from '../StateProvider';
-import firebase from 'firebase';
 import db from '../firebase';
-import ProgressBar from './ProgressBar';
-import useStorage from '../hooks/useStorage';
-import HelpIcon from '@material-ui/icons/Help';
 import "firebase/database";
-import './NewPost.css'
 import addNotification from 'react-push-notification';
+// import { useStateValue } from '../StateProvider';
+// import firebase from 'firebase';
+// import ProgressBar from './ProgressBar';
+// import useStorage from '../hooks/useStorage';
+// import HelpIcon from '@material-ui/icons/Help';
 
 const AddAboutUs = () => {
     const [title, setTitle ] = useState('');

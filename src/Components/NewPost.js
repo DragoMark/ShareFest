@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import './NewPost.css'
-// import { useStateValue } from '../StateProvider';
-import firebase from 'firebase';
 import db from '../firebase';
-import ProgressBar from './ProgressBar';
-import useStorage from '../hooks/useStorage';
-import HelpIcon from '@material-ui/icons/Help';
 import "firebase/database";
-import './NewPost.css'
+import ProgressBar from './ProgressBar';
 import addNotification from 'react-push-notification';
+import AttachmentIcon from '@material-ui/icons/Attachment';
+// import { useStateValue } from '../StateProvider';
+// import firebase from 'firebase';
+// import useStorage from '../hooks/useStorage';
+// import HelpIcon from '@material-ui/icons/Help';
 
 const NewPost = () => {
     const [title, setTitle ] = useState('');
@@ -95,7 +95,7 @@ const NewPost = () => {
             <div className="messageSender__top">
                     <div className="contact-clean">
                         <form method="post" onSubmit={handleSubmit}>
-                            <h2 className="text-center">New Post</h2>
+                            <h2 className="text-center text-dark">New Post</h2>
                             <div className="form-group">
                                 <input onChange={handleTitle} value={title} className="form-control" type="text" name="title" placeholder="Title" required/>
                             </div>
@@ -111,7 +111,8 @@ const NewPost = () => {
                                 <textarea onChange={handleDescription} value={description} className="form-control" name="description" placeholder="Message" rows="14"></textarea>
                             </div>
                             <div className="form-group">
-                                <input onChange={handleFile} className="form-control" type="file" name="file" placeholder="File" />
+                                <AttachmentIcon />
+                                <input onChange={handleFile} type="file" name="file" placeholder="File" />
                             </div>
                             <div className="output">
                                 { error && <div className="error">{ error }</div>}

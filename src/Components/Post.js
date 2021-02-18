@@ -1,14 +1,15 @@
 import React from 'react'
 import './Post.css'
-import firebase from 'firebase';
-import db from '../firebase'
-import { Avatar } from '@material-ui/core'
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
-import NearMeIcon from '@material-ui/icons/NearMe';
-import AccountCirleIcon from '@material-ui/icons/AccountCircle';
-import ExpandMoreOutlined from '@material-ui/icons/ExpandMoreOutlined';
 import addNotification from 'react-push-notification';
+import db from '../firebase'
+import DeleteIcon from '@material-ui/icons/Delete';
+// import firebase from 'firebase';
+// import { Avatar } from '@material-ui/core'
+// import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+// import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+// import NearMeIcon from '@material-ui/icons/NearMe';
+// import AccountCirleIcon from '@material-ui/icons/AccountCircle';
+// import ExpandMoreOutlined from '@material-ui/icons/ExpandMoreOutlined';
 
 // import React, { useState } from 'react'
 
@@ -68,7 +69,7 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
             <div className="post__options">
                 <button onClick = {handleClick} type="button" className="btn btn-light">
                     <div className="post__option">
-                        <ThumbUpIcon/>
+                        <DeleteIcon/>
                         <p>Delete</p>
                     </div>
                 </button>
