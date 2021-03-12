@@ -5,7 +5,7 @@ import "firebase/database";
 import addNotification from 'react-push-notification';
 
 
-const AddAboutUs = () => {
+const AddPricing = () => {
     const [description, setDescription ] = useState('');
 
     //Description value change ( visual )
@@ -15,7 +15,7 @@ const AddAboutUs = () => {
 
     //Display current date
     useEffect(()=>{
-        const getAboutUs = db.database().ref('AboutUs');
+        const getAboutUs = db.database().ref('Pricing');
         getAboutUs.on('value',(snapshot) => {
             const data = snapshot.val();
             // console.log(snapshot.val().description)
@@ -28,7 +28,7 @@ const AddAboutUs = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         // console.log(e.target[0].value)
-        const postList = db.database().ref('AboutUs');
+        const postList = db.database().ref('Pricing');
         postList.set({
             description: e.target[0].value,
         }) 
@@ -37,7 +37,7 @@ const AddAboutUs = () => {
 
         addNotification({
             title: 'Success',
-            subtitle: 'You have updated About Us successfully',
+            subtitle: 'You have updated Pricing successfully',
             // message: 'This is a very long message',
             theme: 'light',
             backgroundTop:'green',
@@ -50,7 +50,7 @@ const AddAboutUs = () => {
             <div className="add__top">
                     <div className="contact-clean">
                         <form method="post" onSubmit={handleSubmit}>
-                            <h2 className="text-center">About Us</h2>
+                            <h2 className="text-center">Pricing</h2>
                             <div className="form-group">
                                 <textarea onChange={handleDescription} value={description} className="form-control" name="description" placeholder="Message" rows="14"></textarea>
                             </div>
@@ -64,4 +64,4 @@ const AddAboutUs = () => {
     )
 }
 
-export default AddAboutUs;
+export default AddPricing;

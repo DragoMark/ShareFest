@@ -72,7 +72,6 @@ const NewPost = () => {
             timestamp:date,
             title: e.target[0].value,
             media: url
-            // image:imageUrl
         }) 
 
 
@@ -86,13 +85,14 @@ const NewPost = () => {
             subtitle: 'You have posted successfully',
             // message: 'This is a very long message',
             theme: 'light',
+            backgroundTop:'green',
+            backgroundBottom:'green'
         });
     }
 
     return (
-        // <div className="testing">
-        <div className='messageSender'>
-            <div className="messageSender__top">
+        <div className='newPost'>
+            <div className="newPost__top">
                     <div className="contact-clean">
                         <form method="post" onSubmit={handleSubmit}>
                             <h2 className="text-center text-dark">New Post</h2>
@@ -108,25 +108,24 @@ const NewPost = () => {
                             </div>
                             
                             <div className="form-group">
-                                <textarea onChange={handleDescription} value={description} className="form-control" name="description" placeholder="Message" rows="14"></textarea>
+                                <textarea onChange={handleDescription} value={description} className="form-control" name="description" placeholder="Message" rows="18" required></textarea>
                             </div>
                             <div className="form-group">
                                 <AttachmentIcon />
-                                <input onChange={handleFile} type="file" name="file" placeholder="File" />
+                                <input onChange={handleFile} type="file" name="file" placeholder="File" accept=".mp4,.jpg,.jpeg,.png" required/>
                             </div>
                             <div className="output">
                                 { error && <div className="error">{ error }</div>}
                                 { file && <div>{ `Loading ${file.name}...` }</div>}
                                 { file && <div>Please Wait<br/><ProgressBar file = {file} setFile={setFile} setUrl={setUrl}/></div>}
                             </div>
-                            <div className="form-group">
-                                <button  className="btn btn-primary" type="submit">Post </button>
+                            <div className="form-group button-submit">
+                                <button  className="btn btn-danger" type="submit">Post </button>
                             </div>
                         </form>
                     </div>
             </div>
         </div>
-        // </div>
     )
 }
 

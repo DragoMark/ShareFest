@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './Learn.css';
-// import MessageSender from './MessageSender';
 import Post from './Post'
 import db from '../firebase'
 
@@ -26,14 +25,12 @@ function Daily (){
 
     return (
         <div className='feed' >
-            {/* <MessageSender collection='guide'/> */}
             {   
                 posts.map((post) => (
                     <Post
                         key={post.id}
                         id={post.id}
                         collection='Daily updates'
-                        // profilePic={post.data.profilePic}
                         message={post.data.description}
                         timestamp={post.data.timestamp}
                         image={post.data.media}

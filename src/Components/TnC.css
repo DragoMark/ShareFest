@@ -43,37 +43,6 @@
     color: black;
 
 }
-
-/* .post__options{
-    padding: 15px;
-    padding-top: 10px;
-    border-top: 1px solid lightgray;
-    display: flex;
-    justify-content: space-evenly;
-    font-size : medium;
-    color: black;
-    cursor: pointer;
-    
+.tnc__bottom{
+    white-space: pre-wrap;
 }
-
-.post__option{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    flex: 1;
-}
-
-.post__option > p{
-    margin-left: 10px;
-    margin-top:12px
-}
-
-.post__option:hover{
-    background-color: #eff2f5;
-    border-radius: 10px;
-}
-
-.post__option.ThumbUp :hover{
-    color: blue;
-} */

@@ -3,14 +3,8 @@ import './Post.css'
 import addNotification from 'react-push-notification';
 import db from '../firebase'
 import DeleteIcon from '@material-ui/icons/Delete';
-// import firebase from 'firebase';
-// import { Avatar } from '@material-ui/core'
-// import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-// import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
-// import NearMeIcon from '@material-ui/icons/NearMe';
-// import AccountCirleIcon from '@material-ui/icons/AccountCircle';
-// import ExpandMoreOutlined from '@material-ui/icons/ExpandMoreOutlined';
-
+import { Player } from 'video-react';
+import "../../node_modules/video-react/dist/video-react.css";
 // import React, { useState } from 'react'
 
 const Post = ({ key, id, image, collection, username, timestamp, message }) => {
@@ -23,24 +17,24 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
             subtitle: 'You have deleted a post',
             // message: 'This is a very long message',
             theme: 'red',
-
-            // native: true  when using native, your OS will handle theming.
         });
     }
+    // console.log(image.split('.'))
+    const ext = image.split('.')[image.split('.').length - 1].slice(0,3);
 
     return (
         <div className='post'>
             <div className="post__image">
-                {/* { */}
-                    {/* type=="video/mp4" ? ( */}
-                    {/* <video width="800" height="400">
-                        <source src={image} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video> */}
-                    {/* ):( */}
+                {
+                    ext == "mp4" ? (
+                        <Player>
+                            <source src={image} />
+                        </Player>
+                    ):(
                         <img src={image}/>
-                    {/* )
-                } */}
+                    )
+                }
+                
             </div>
             <div className="post__top">
                 <div className="post__topInfo">
@@ -49,11 +43,9 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
                    <p>{timestamp}</p>
                 </div>
             </div>
-
             <div className="post__bottom">
-                <p>{ message }</p>
+                <blockquote>{ message }</blockquote>
             </div>
-
             {/* {
                 imgName ? (
                     <div className="post__image">
@@ -63,9 +55,6 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
                         console.log('DEBUG >>> no image here')
                     )
             } */}
-
-
-
             <div className="post__options">
                 <button onClick = {handleClick} type="button" className="btn btn-light">
                     <div className="post__option">
@@ -76,14 +65,6 @@ const Post = ({ key, id, image, collection, username, timestamp, message }) => {
                 {/* <div className="post__option">
                     <ChatBubbleOutlineIcon />
                     <p>Answer</p>
-                </div>
-                <div className="post__option">
-                    <NearMeIcon />
-                    <p>Share</p>
-                </div>
-                <div className="post__option">
-                    <AccountCirleIcon />
-                    <ExpandMoreOutlined />
                 </div> */}
             </div>
         </div>

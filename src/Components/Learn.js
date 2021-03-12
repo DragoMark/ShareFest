@@ -19,7 +19,7 @@ const Learn = () => {
             })
             setPosts(docs.map(doc => ({ id:doc.key, data:doc.val() })))
             // docs.map(doc => (console.log(doc.key)))
-            // console.log((posts))
+            console.log((posts))
             // console.log(snapshot);
             // console.log(snapshot.val())
         })

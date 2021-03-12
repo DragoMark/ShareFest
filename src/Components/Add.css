@@ -1,4 +1,4 @@
-.newPost{
+.add{
     display: flex;
     /* align-items:center; */
     /* justify-content:center; */
@@ -12,19 +12,19 @@
     max-width: 1200px;
 }
 
-.newPost__top{
+.add__top{
     /* display: flex; */
     /* align-items:center; */
     border-bottom: 1px solid #eff2f5;
     padding: 15px;
 }
 
-.newPost__top > form{
+.add__top > form{
     /* flex: 1; */
     display: flex;
 }
 
-.newPost__top > form > input{
+.add__top > form > input{
     outline-width: 0;
     border: none;
     padding: 5px 20px;
@@ -33,11 +33,11 @@
     background-color: #eff2f5;
 }
 
-.newPost__fileSelector{
+.add__fileSelector{
     width:20%;
 }
 
-.newPost__top > form > button{
+.add__top > form > button{
     height: 0;
     width: 0;
     background-color: transparent;
@@ -45,16 +45,16 @@
     border:none;
     /* display:none; */
 }
-.newPost__input{
+.add__input{
     flex: 1;
 }
 
-.newPost__bottom{
+.add__bottom{
     display: flex;
     justify-content: space-evenly;
 }
 
-.newPost__option{
+.add__option{
     padding: 20px;
     display: flex;
     align-items: center;
@@ -62,12 +62,12 @@
     margin: 5px;
 }
 
-.newPost__option > h3{
+.add__option > h3{
     font-size: medium;
     margin-left: 10px;
 }
 
-.newPost__option:hover{
+.add__option:hover{
     background-color: #eff2f5;
     border-radius: 20px;
 }
